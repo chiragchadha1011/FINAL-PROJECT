@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/Poppins-Regular.otf);
+}
+
+
+html {
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    scroll-behavior: smooth;
+}
+
+*{
+    /* outline: 1px dotted #fff; */
+}
+
+/* GROUP SELECTORS */
+ html,
+body,
+main,
+section {
+    height: 100%;
+} 
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*HEADER START*/
+header {
+    
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    padding: 0 5em;
+    color: #fff;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.9em;
+}
+
+header h1 {
+    /* DESCENDANT SELECTOR */
+    margin-top: 0;
+    font-size: 5rem;
+    transition: transform 0.3s ease;
+}
+
+header h1 span:nth-of-type(1) {
+    color: #F39C12;
+    text-shadow: -0.3rem 0px #ce1111;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: lighter;
+    color: #F39C12;
+    text-shadow: -0.1rem 1.2px #ce1111;
+    margin-top: -3rem;
+    animation-name: Para;
+    animation-duration: 2s;
+}
+
+/* BUTTON REFERENCE : https://freefrontend.com/css-buttons/ */
+.button {
+    --c:  #F39C12;
+    
+    box-shadow: 0 0 0 .1em inset var(--c) ; 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+
+  .button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+
+  .button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+  
+  
+  .button {
+    color: #fff;
+    margin-top: -10rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: .2em .6em;
+    font-weight: bold;  
+    border: none;
+    font-family: 'Playfair Display', serif;
+  }
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10em;
+}
+
+
+/* Animation */
+
+@keyframes Para{	
+	0% {
+		opacity: 0%;	  
+	}
+	50% {  
+		opacity: 70%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+/* HEADER END */
+
+
+/* ABOUT ME SECTION STARTS HERE*/
+
+#about {
+    /* ID SELECTOR */
+    display: flex;
+    flex-direction: column;
+    padding: 0 5em;
+    margin-bottom: 3em;
+}
+
+.about-container {
+    /* CLASS SELECTOR */
+    display: flex;
+    height: 100%;
+    gap: 5rem;
+}
+
+#about>h2 {
+    /* COMBINATOR SELECTOR */
+    color:#F39C12;
+    font-size: 4rem;
+    width: fit-content;
+    /* transform: scale(1);
+    transition: transform 0.3s ease; */
+    text-decoration:underline;
+    text-shadow: -0.2rem 0px #ce1111;
+    font-weight: bold;
+    animation-name: Heading;
+    animation-duration: 3s;
+}
+
+/* #about h2:hover{
+    font-size: 4.5rem;
+    color:#F39C12;
+    text-shadow: -0.3rem 0px #ce1111; 
+} */
+
+.about-info {
+    padding-right: 2em;
+    flex: 1;
+    color: #fff;
+    line-height: 1.8;
+    font-family: 'Lora', serif;
+}
+
+.my_pic{
+    background-image: url("../assests/mypic.jpeg");
+    filter: sepia(25%);
+    background-size: cover;
+    flex: 1;
+    border-radius: 25px;
+    display: flex;
+    border: 2px solid #F39C12 ;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.my_pic:hover{
+    /* PSEUDO CLASS SELECTOR */
+    transform: scale(1.1);
+    box-shadow: 7px 7px 8px #df7300;
+}
+
+
+/* ABOUT ME SECTION ENDS HERE*/
+
+
+
+/*SKILLS SECTION STARTS FROM HERE*/
+
+#skills {
+
+    padding: 1em 5em;
+    height: 140%;
+}
+
+#skills h2 {
+    color:#F39C12;
+    /* transition:all 0.3s ease; */
+    width: fit-content;
+    /* transform: scale(1); */
+    font-size: 4rem;
+    margin-top: 210px;
+    text-decoration: underline;
+    text-shadow: -0.2rem 0px #ce1111;
+    font-weight: bold;
+    animation-name: Heading;
+    animation-duration: 3s;
+}
+
+
+.skills-container {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+   background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    border: 1px solid rgb(255, 255, 255, 5%);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    position: relative;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    font-family: 'Cardo', serif;
+    
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 7px #df7300;
+}
+
+.card h3 {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lora', serif;
+}
+
+.card h1{
+    text-decoration: underline;
+    font-family: 'Lora', serif;
+}
+
+/*PROJECT SECTION STARTS HERE*/
+
+#projects {
+    padding: 0em 5em;
+    gap: 1em;
+    margin-bottom:24em ;
+}
+
+#projects h2 {
+    font-size: 4rem;
+    color: #F39C12;
+    /* transition:all 0.3s ease; */
+    width: fit-content;
+    /* transform: scale(1); */
+    padding-bottom: 0.4em;
+    text-decoration: underline;
+    text-shadow: -0.2rem 0px #ce1111;
+    font-weight: bold;
+    animation-name: Heading;
+    animation-duration: 3s;
+}
+
+/* #projects h2:hover{
+    font-size: 4.5rem;
+    color:#F39C12;
+    text-shadow: -0.3rem 0px #ce1111; 
+} */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    height: 130%;
+    position: relative;
+}
+
+.project {
+    transition: all 0.4s ease;
+    /* filter: brightness(50%); */
+    filter: opacity(70%);
+    color: #000;
+    gap:5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+}
+
+.project:hover {
+     filter: opacity(90%); 
+     transform: scale(1.1);
+     box-shadow: 5px 5px 7px #df7300;
+}
+
+.project:nth-of-type(1) {
+    background: url(../assests/arduino.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 2em;
+
+}
+
+.project:nth-of-type(2) {
+    background: url(../assests/geo.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: 2em;
+
+
+}
+
+.project:nth-of-type(3) {
+    background: url(../assests/css.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 2em;
+
+
+
+}
+
+.project:nth-of-type(4) {
+    background: url(../assests/csss.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: 2em;
+
+
+
+}
+
+.project-popup-content {
+    width: 25%;
+    height: 28%;
+    padding: 0.4em;
+    display: flex;
+    flex-direction: column;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    border-radius: 100%;
+    padding: 0.7em;
+    text-align: center;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+    transform: translate(0%, 0%);
+    scale: 0;
+    transition: all 0.3s ease;
+}
+
+.project:hover .project-popup-content {
+    scale: 1;
+    
+}
+
+/*PROJECT SECTION ENDS HERE*/
+
+
+/* CONTACT ME SECTION STARTS HERE */
+
+/* Reset some default form styles */
+form {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Styling for the contact section */
+#contact {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.contact-container h2 {
+    color: #F39C12;
+    font-size: 3em;
+    text-decoration: underline;
+    margin-bottom: 35px;
+    /* transition: all 0.3s ease;
+    transform: scale(1); */
+    text-shadow: -0.2rem 0px #ce1111;
+    font-weight: bold;
+    animation-name: Heading;
+    animation-duration: 3s;
+}
+
+/* .contact-container h2:hover{
+    transform: scale(1.2);
+    color:#F39C12;
+    text-shadow: -0.2rem 0px #ce1111;
+} */
+
+.contact-container form input {
+    color: #fff;
+    border: none;
+    background: #a2a2a2;
+    padding: 1em;
+    margin: 0.5em 0;
+    font-size: 1.1rem;
+}
+
+.contact-container form textarea {
+    color: #fff;
+    border: none;
+    background: #a2a2a2;
+    padding: 1em;
+    margin: 0.5em 0;
+    font-size: 1.1rem;
+    width: 100%;
+
+}
+
+
+/* Styling for form elements */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #fff;
+    font-weight:800;
+}
+
+textarea {
+    height: 120px;
+}
+
+.button:nth-child(2){
+    margin-top: 1.7rem;
+}
+
+.button:nth-child(2) a{
+    color: #fff;
+}
+
+
+/*FOOTER*/
+
+footer{
+    height: 4%;
+    text-align: center;
+    color: #fff;
+}
+
+
+/*Animation for the Heading*/
+
+@keyframes Heading{
+    0%{
+        opacity: 0%;
+    }
+
+    30%{
+        opacity: 50%;
+    }
+
+    70%{
+        opacity: 80%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+    header {
+      padding: 0 1em;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  
+    .my_pic {
+      margin-top: 2em;
+      border: none;
+    }
+  
+    .skills-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .projects-container {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2em;
+    }
+  }
+  
+  /* Medium screens (601px to 1024px) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    header {
+      padding: 0 3em;
+    }
+  
+    .buttons {
+      gap: 3em;
+    }
+  
+    .about-container {
+      gap: 3em;
+    }
+  
+    .skills-container,
+    .projects-container {
+      gap: 2em;
+    }
+  }
+  
+  /* Large screens (1025px and above) */
+  @media (min-width: 1025px) {
+    header {
+      padding: 0 5em;
+    }
+  
+    .about-container {
+      gap: 5rem;
+    }
+  
+    .buttons {
+      gap: 10em;
+    }
+  }
+  
